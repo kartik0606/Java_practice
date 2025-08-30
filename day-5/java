@@ -1,0 +1,450 @@
+public class Main {
+    public static void main(String[] args) {
+        int n = 32456;
+        int rotate = 0;
+        int k = 2;
+        int temp = n;
+        int count = 0;
+
+        while ( temp > 0 ) {
+             temp = temp / 10;
+             count++;
+        }
+          temp = n ;
+         int power = (int) Math.pow(10,count-1);
+          int index = 0 ;
+
+          while (power > 0 ){
+              int digit  = temp /power;
+              temp  = temp % power;
+
+              int newindex = (index + k)%count;
+               if (newindex < 0 ){
+                   newindex = newindex + count;
+               }
+                 rotate = rotate + digit*(int)Math.pow(10,count-1-newindex);
+                  power = power/10;
+                  index++;
+          }
+        System.out.println(rotate);
+
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Main {
+     public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+         int n  = 3214;
+         int inverse  = 0 ;
+         int position = 1;
+         while (n > 0 ){
+               int digit = n % 10;
+                   n = n/10;
+                inverse = inverse + position *(int)Math.pow(10,digit-1);
+                position++;
+         }
+         System.out.println(inverse);
+     }
+}
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 240;
+        for (int div = 2; div<=n; div++) {
+
+            while (n % div == 0 ){
+                n = n /div;
+                System.out.println(div);
+            }
+
+        }
+
+    }
+
+  public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("write for h ");
+        int h = input.nextInt();
+        System.out.println("write for p");
+        int p = input.nextInt();
+        System.out.println("write for b");
+        int b = input.nextInt();
+
+       if(h*h == p*p + b*b){
+           System.out.println(true);
+
+        }else {
+           System.out.println(false);
+       }
+    }
+}
+
+ public class Main {
+     public static void main(String[] args) {
+         int n =44;
+         for (int row = 1; row <=n ; row++) {
+
+             for (int col = 1; col <=row ; col++) {
+                 System.out.print(" * ");
+             }
+             System.out.println();
+
+         }
+     }
+}
+ public class Main {
+    public static void main(String[] args) {
+        int n = 5;
+        for (int row = 1; row <=n ; row++) {
+            for (int col = 1; col <=row; col++) {
+                System.out.print( col );
+            }
+            System.out.println();
+
+        }
+    }
+}
+
+ public class Main {
+     public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+         int n = input.nextInt();
+         int sum = 0 ;
+
+         for (int i = 1; i <=100 ; i++) {
+             System.out.println(i);
+
+
+         }
+
+
+     }
+}
+  public class Main {
+    public static void main(String[] args) {
+        int  n = 9;
+        int sum  = 0 ;
+        for (int i = 1; i <=n; i++) {
+
+             sum = sum + i ;
+
+        }
+        System.out.println(sum);
+    }
+}
+
+ public class Main {
+     public static void main(String[] args) {
+         int n =100;
+         for (int i = 2; i <=n ; i++) {
+
+             if (i % 2 == 0 ){
+                 System.out.println(i);
+
+             }
+
+
+
+         }
+     }
+}
+ public class Main {
+    public static void main(String[] args) {
+        int n = 100;
+        for (int i = 1; i <= n; i++) {
+
+            if (i % 2 != 0) {
+                System.out.println(i);
+
+            }
+
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = 5;
+        for (int i = 1; i <=n ; i++) {
+            System.out.println(n * i);
+
+        }
+    }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int sum = 0;
+        for (int i = 1; i <=n; i++) {
+            if (i % 2 ==0){
+                System.out.println(i);
+                sum = sum + i;
+
+
+            }
+
+        }
+        System.out.println(sum);
+
+
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int sum = 0;
+        for (int i = 1; i <=n ; i++) {
+             if (i % 2!=0){
+                 sum = sum + i;
+                 System.out.println(i);
+             }
+
+
+        }
+         System.out.println(sum);
+    }
+}
+   public class Main {
+    public static void main(String[] args) {
+        int n = 8;
+        int fact = 1 ;
+        for (int i = 1; i <=8 ; i++) {
+              fact = fact * i;
+        }
+        System.out.println(fact);
+    }
+}
+    public class Main {
+    public static void main(String[] args) {
+         int n = 123;
+          int reverse = 0 ;
+          int count = 0 ;
+
+          while (n > 0 ){
+               int n1 = n % 10;
+               reverse = reverse * 10 + n1;
+               count++;
+               n = n/10;
+
+
+          }
+        System.out.println(reverse);
+    }
+}
+   public class Main {
+    public static void main(String[] args) {
+        int n = 4284726;
+        int count = 0 ;
+         while ( n > 0 ){
+              int n1 = n % 10;
+              count++;
+              n = n/10;
+
+         }
+        System.out.println(count);
+    }
+}
+   public class Main {
+    public static void main(String[] args) {
+        int n = 54644;
+        int sum =0;
+        int count =0;
+        while (n > 0){
+            int n2 = n % 10;
+            count++;
+            n =n/10;
+            sum = sum +n2;
+
+        }
+        System.out.println(sum);
+    }
+}
+
+  public class Main {
+      public static void main(String[] args) {
+          int n = 1651;
+          int reverse = 0;
+          int count = 0;
+          int original = n;
+          while (n > 0) {
+              int n1 = n % 10;
+              reverse = reverse * 10 + n1;
+              count++;
+              n = n / 10;
+
+          }
+           System.out.println(reverse);
+
+          if (reverse == original) {
+              System.out.println("palindrome");
+          }else {
+              System.out.println("not palindrome");
+          }
+
+      }
+  }
+public class Main {
+    public static void main(String[] args) {
+        int n = 153;
+        int original = n;
+        int arms  = 0 ;
+        int count=0;
+        while (n > 0 ){
+             int n1 = n% 10;
+            arms = arms + (n1 * n1 * n1);
+            count++;
+             n = n/10;
+
+        }
+        System.out.println(arms);
+
+         if (arms ==original){
+             System.out.println("arms");
+
+         }else {
+             System.out.println("no");
+         }
+
+    }
+}
+ public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int target  = 42;
+        int guess = 0;
+        while (guess!=target){
+             guess = input.nextInt();;
+            System.out.println("enter again;");
+             if (guess > target){
+                 System.out.println("too high");
+             } else if (guess<target) {
+                 System.out.println("too low");
+
+             }else {
+                 System.out.println("congratulations u win this game ");
+             }
+
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        for (int i = 1; i <=n ; i++) {
+            if (i % 3==0 || i % 5==0 ){
+                System.out.println(i);
+            }
+
+
+        }
+    }
+}
+Reverse a number and print the difference between original and reversed.
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 324;
+        int reverse = 0 ;
+        int orignial = n ;
+        int count =0;
+        while (n > 0 ){
+             int n1 = n % 10;
+             reverse = reverse * 10 + n1;
+             count++;
+             n = n /10;
+        }
+        System.out.println(reverse);
+          reverse = orignial- reverse;
+        System.out.println(reverse);
+
+    }
+}
+Check if a number is perfect (sum of its divisors excluding itself = number). explain this question //
+
+ public class Main {
+     public static void main(String[] args) {
+         int n = 6;
+         int sum = 0;
+         for (int div = 1; div <= n / 2; div++) {
+
+             if (n % div == 0) {
+                 sum = sum + div;
+                 System.out.println(div);
+             }
+
+         }
+
+           if (sum == n) {
+             System.out.println("perfect number ");
+            } else {
+             System.out.println("not perfect ");
+
+         }
+     }
+ }
+
+
+Print all prime numbers between 1 and N.
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int low = input.nextInt();
+        int high = input.nextInt();
+
+        for (int i = low; i <=high; i++) {
+            int count = 0 ;
+            int n = i;
+
+            for (int div = 2; div * div <=n ; div++) {
+                if (n % div==0){
+                    count++;
+                       break;
+                }
+
+            }
+             if (n > 1 && count == 0){
+                 System.out.println(n);
+
+             }
+
+        }
+    }
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int low = input.nextInt();
+        int high = input.nextInt();
+
+        for (int i = low; i <= high; i++) {
+            int count = 0;
+            int n = i;
+
+            for (int div = 2; div * div <= n; div++) {   // optimized loop
+                if (n % div == 0) {
+                    count++;
+                    break;   // no need to continue once divisor is found
+                }
+            }
+
+            if (n > 1 && count == 0) {   // prime has no divisors other than 1 and itself
+                System.out.println(n);
+            }
+        }
+    }
+}
