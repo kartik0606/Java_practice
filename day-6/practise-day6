@@ -1,0 +1,225 @@
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        for (int i = 1; i <=n ; i++) {
+//            if (i % 3==0 || i % 5 ==0){
+//                System.out.println(i);
+//            }
+//
+//        }
+//    }
+//}
+//Print multiplication table for a number, but skip multiples of 5.
+
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        for (int i = 1; i <=10 ; i++) {
+//            int result = n * i;
+//            if (result %5==0){
+//                continue;
+//            }
+//            System.out.println(result);
+//
+//        }
+//    }
+//
+//}
+//
+//import java.util.Scanner;
+//
+////Sum of first N Fibonacci numbers.
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n  = input.nextInt();
+//        int previous = 0 ;
+//        int next = 1;
+//        int count = 0 ;
+//        int sum =0;
+//        for (int i = 0; i <=n; i++) {
+//            System.out.println(previous);
+//            sum = sum+previous;
+//             int temp = previous+ next;
+//             previous = next;
+//             next =temp;
+//        }
+//        System.out.println(sum);
+//
+//    }
+//}
+
+import java.util.Scanner;
+
+//Check if a number is perfect (sum of its divisors excluding itself = number
+//
+//import java.util.Scanner;
+//
+//public class Main {
+//      public static void main(String[] args) {
+//          Scanner input = new Scanner(System.in);
+//          int n = input.nextInt();
+//          int sum =0;
+//          for (int div = 1; div <n ; div++) {
+//              if (n % div==0){
+//                  sum = sum+div;
+//              }
+//          }
+//          if (sum==n){
+//              System.out.println("perfect");
+//          }else {
+//              System.out.println("not");
+//          }
+//      }
+//}
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int sum = 0;
+//
+//        for (int div = 1; div < n; div++) {
+//            if (n % div == 0) {
+//                sum += div;  // add divisor to sum
+//            }
+//        }
+//
+//        if (sum == n) {
+//            System.out.println("perfect");
+//        } else {
+//            System.out.println("not perfect");
+//        }
+//    }
+//}
+//Write a program to find the greatest of three numbers using if-else-if ladder.
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int a = input.nextInt();
+//        int b = input.nextInt();
+//        int c  = input.nextInt();
+//        if (a>b && a>c){
+//            System.out.println(a);
+//        }
+//        if (b>a&& b>c){
+//            System.out.println(b);
+//        }
+//        if (c>a&& c>b){
+//            System.out.println(c);
+//
+//        }
+//    }
+//}
+//Write a program to check whether a year is a leap year or not using if-else.
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//      String n = input.next();
+//        if (n % 4==0 && n%100!=0){
+//            System.out.println("leap year");
+//
+//         } else if (n % 400==0) {
+//            System.out.println("leap");
+//
+//        } else {
+//            System.out.println("not ");
+//        }
+//    }
+//}
+//Write a program to print numbers from 1 to 50 but:
+//
+//Replace multiples of 3 with "Fizz"
+//
+//Replace multiples of 5 with "Buzz"
+//
+//Replace multiples of both 3 and 5 with "FizzBuzz"
+
+import java.util.Scanner;
+
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        for (int i = 1; i <=50 ; i++) {
+//            if (i % 3==0&& i % 5==0){
+//                System.out.println("fizz-buzz");
+//            } else if (i % 3==0) {
+//                System.out.println("fizz");
+//
+//            } else if (i % 5==0) {
+//                System.out.println("buzz");
+//
+//            }else {
+//                System.out.println(i);
+//            }
+//
+//
+//
+//        }
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int n =11;
+//        for (int row = 1; row <=n ; row++) {
+//            for (int col =1 ; col <=row-1 ; col++) {
+//                System.out.print(" * ");
+//            }
+//            System.out.println();
+//            }
+//        }
+//    }
+//Find the sum of digits of a number and check if it’s divisible by 7.
+//Find the sum of digits of a number and check if it’s divisible by 7.
+//public class Main {
+//    public static void main(String[] args) {
+//        int n =1015;
+//        int sum = 0;
+//        while (n>0){
+//
+//            int n1 = n %10;
+//            n = n/10;
+//            sum = sum+n1;
+//        }
+//        System.out.println(sum);
+//        if (sum%7==0){
+//            System.out.println("true");
+//        }
+//        else {
+//            System.out.println("false");
+//        }
+//
+//    }
+//}
+//Count even and odd digits in a number.
+
+//public class Main {
+//    public static void main(String[] args) {
+//        int n =4241;
+//        int ec = 0;
+//        int oc=0;
+//        int temp = n ;
+//        while ( temp>0){
+//            int  n1 = temp %10;
+//            temp = temp/10;
+//           if (n1 % 2==0){
+//               ec++;
+//
+//            }else {
+//               oc++;
+//           }
+//
+//
+//
+//        }
+//        System.out.println(ec);
+//        System.out.println(oc);
+//    }
+//}
