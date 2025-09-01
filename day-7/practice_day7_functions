@@ -1,0 +1,339 @@
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+       sum();//calling the function
+
+    }
+       static  void sum(){
+           Scanner input = new Scanner(System.in);
+           System.out.println("enter number");
+           int n = input.nextInt();
+           System.out.println("enter numbr 2");
+           int n2 = input.nextInt();
+              int sum = n+n2;
+           System.out.println(sum);
+
+         }
+}
+  public class Main {
+    public static void main(String[] args) {
+         greeting();
+    }
+       static void greeting(){
+           System.out.println("hello world");
+       }
+}
+
+         public class Main {
+         public static void main(String[] args) {
+         int ans = sum2();
+         System.out.println(ans);
+
+        }
+            static  int sum2(){
+           Scanner input = new Scanner(System.in);
+            int n = input.nextInt();
+           int n2= input.nextInt();
+           int sum4 = n + n2;
+           return sum4;  //last point of prog u cant write anything further .
+
+        }
+  }
+
+
+
+  public class Main {
+      public static void main(String[] args) {
+          String message1 = gretting();{
+              System.out.println(message1);
+          }
+
+      }
+        static String gretting(){
+           String message = "how are u ";
+           return message;
+        }
+}
+
+  public class Main {
+      public static void main(String[] args) {
+
+          int ans = sum3(33,22);{
+              System.out.println(ans);
+          }
+
+
+      }
+         static  int sum3(int a , int b){
+             int s2 = a + b;
+             return s2;
+         }
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter your name");
+        String naam = input.next();
+        String ans = greeting(naam);
+        System.out.println(ans);
+    }
+    static String greeting(String name){
+        String message = " hello " + name;
+        return message;
+    }
+}
+   public class Main {
+    public static void main(String[] args) {
+        int a = 93;
+        int b = 83;
+        int temp = a;
+         a = b ;
+         b = temp;
+        System.out.println(a  + " " + b);
+    }
+}
+     public class Main {
+    public static void main(String[] args) {
+
+        String name = " kc ";
+        changeName(name);
+        System.out.println(name);
+
+    }
+      static void changeName(String name){
+        name = "rahul";
+      }
+}
+
+  public class Main {
+      public static void main(String[] args) {
+
+        swap(33,55);
+      }
+
+         static void swap(int num1, int num2 ){
+          int temp = num1;
+          num1 = num2 ;
+           num2 = temp;
+
+             System.out.println(num1 + " " +num2);
+      }
+}
+   public class Main {
+    public static void main(String[] args) {
+        int[] arr = { 3,42,4,22};{
+            change(arr);
+            System.out.println(Arrays.toString(arr));
+
+        }
+
+    }
+     static  void change(int[]nums){
+        nums[0] = 99;
+
+
+     }
+}
+  public class Main {
+    public static void main(String[] args) {
+       int[]arr = {3,44,2,4};
+       change(arr);
+      System.out.println(Arrays.toString(arr));
+
+    }
+    static void change(int[]nums){
+      nums[1] = 90;
+    }
+}
+
+ public class Main {
+    static int x =90;
+     public static void main(String[] args) {
+         System.out.println(x);
+         int x =40;
+         System.out.println(x);
+         fun();
+     }
+     static void fun(){
+         System.out.println(x);//this x is 90 because it is the first x which have a maximum scope
+   }
+}
+  public class Main {
+    public static void main(String[] args) {
+      fun(67);
+      fun("kartik",3);
+
+    }
+     static void fun(int a ){
+       System.out.println(a);
+     }
+     static void fun(String name,int b){
+       System.out.println(name+ " " + b);
+     }
+}
+// method overloading is going on
+
+ public class Main {
+   public static void main(String[] args) {
+
+     demo(77,77,78,9);
+     demo("kunal","shreya","ravi");
+
+   }
+
+   static int sum(int a, int b) {
+    return a + b;
+   }
+    static int sum(int a , int b , int c){
+      return a + b + c;
+    }
+     static void demo(int...v){
+         System.out.println(Arrays.toString(v));
+     }
+     static void demo(String...v){
+         System.out.println(Arrays.toString(v));
+     }
+ }
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int ans = prime(3);{
+            System.out.println(ans);
+        }
+
+    }
+
+    static int prime(int n) {
+        for (int i = 1; i <= n; i++) {
+            if (n % i != 0) {
+               return i;
+            }
+
+        }
+        return -1;
+
+    }
+}
+
+
+
+
+   public class Main {
+    public static void main(String[] args) {
+        int n =34;
+        for (int i = 1; i <=n ; i++) {
+            int count = 0;
+            for (int div = 1; div <=i ; div++) {
+                 if (i % div==0){
+                     count++;
+
+                 }
+
+            }
+              if (count==2){
+                  System.out.println(i);
+              }
+
+        }
+    }
+}
+  public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.println(isprime(n));
+
+    }
+
+    static boolean isprime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        int c = 2;
+        while (c * c <= n) {
+            if (n % c == 0) {
+                return false;
+
+            }
+            c++;
+            if (c * c > n) {
+                return true;
+
+            }
+
+        }
+        return false;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.println(isprime(n));
+    }
+        static boolean isprime(int n){
+        if (n<=1){
+            return false;
+        }
+          int c=2;
+        while (c*c<=n){
+                if (n%c==0){
+                    return false;
+                }
+                c++;
+        }
+               if (c*c>=1){
+                   return true;
+               }
+               return false;
+        }
+
+
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.println(iseven(n));
+
+    }
+    static boolean iseven(int n){
+        if (n % 2==0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.println(arms(n));
+
+    }
+    static  boolean arms(int n){
+           int original = n;
+           int sum = 0;
+           int rem =0;
+           while (n > 0 ){
+               rem = n % 10;
+               n = n/10;
+               sum = sum + rem * rem * rem;
+
+           }
+              return  sum==original;
+
+    }
+}
