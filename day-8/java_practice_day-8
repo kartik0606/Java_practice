@@ -1,0 +1,124 @@
+//import java.util.Scanner;
+//
+//public class Main {
+//    static boolean isprime(int n) {
+//        if (n <= 1)
+//            return false;
+//        for (int div = 2; div < n; div++) {
+//            if (n % div == 0) {
+//                return false;
+//            }
+//        }
+//        return true;
+//
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        System.out.println(isprime(n));
+//    }
+//}
+//
+
+//import java.util.Scanner;
+//
+//public class Main {
+//    static  String marks(int a) {
+//        if (a <= 100 && a >= 91) {
+//            return "AA";
+//        }
+//        if (a >= 81 && a <= 90) {
+//            return "bb";
+//        }
+//         return "fail";
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        System.out.println(marks(n));
+//
+//
+//
+//    }
+//}
+
+import java.util.Scanner;
+
+//Write a program to print the factorial of a number by defining a method named 'Factorial'. Factorial of any number n is represented by n! and is equal to 1 * 2 * 3 * .... * (n-1) *n. E.g.-
+//        4! = 1 * 2 * 3 * 4 = 24
+//        3! = 3 * 2 * 1 = 6
+//        2! = 2 * 1 = 2
+//Also,
+//        1! = 1
+//        0! = 1
+//
+//import java.util.Scanner;
+//
+//public class Main {
+//    static int fact(int n){
+//         int result =1 ;
+//        for (int i = 1; i <=n; i++) {
+//               result = result * i;
+//        }
+//          return result;
+//
+//
+//    }
+//
+//
+//     public static void main(String[] args) {
+//         Scanner input = new Scanner(System.in);
+//         int n = input.nextInt();
+//         System.out.println(fact(n));
+//
+//     }
+//}
+//Write a function to find if a number is a palindrome or not. Take number as parameter.
+// public class Main {
+//    static boolean palindrome(int n ) {
+//        int reverse = 0;
+//        int original = n;
+//        while (n > 0) {
+//            int rem = n % 10;
+//            reverse = reverse * 10 +rem;
+//            n = n / 10;
+//
+//        }
+//          return reverse == original;
+//
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//         if (palindrome(n)){
+//             System.out.println(n + " is  palindrome");
+//         }
+//         else {
+//             System.out.println(n + " is not palindrome ");
+//         }
+//
+//    }
+//
+//}
+//
+//rite a function that returns the sum of first n natural numbers.
+
+//public class Main {
+//    static int natural(int n){
+//         int sum = 0;
+//        for (int i = 1; i <=n; i++) {
+//             sum =  sum+i;
+//        }
+//         return sum;
+//
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n  = input.nextInt();
+//        System.out.println(natural(n));
+//    }
+//}
