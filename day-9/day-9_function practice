@@ -1,0 +1,403 @@
+import java.util.Scanner;
+public class Main {
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int n= input.nextInt();
+       if (n%2==0){
+           System.out.println("even");
+       }
+       else {
+           System.out.println("odd");
+       }
+   }
+}
+
+import java.util.Scanner;
+
+public class Main {
+   static long fact(int n ){
+     long fact =1;
+       for (int i = 1; i <=n ; i++) {
+
+          fact = fact * i;
+           }
+        return fact;
+
+       }
+
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int n = input.nextInt();
+       System.out.println(fact(n));
+
+   }
+
+   }
+
+
+import java.util.Scanner;
+
+//Prime Check Function
+public class Main {
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int n = input.nextInt();
+       for (int i = 2; i <n ; i++) {
+           int count = 0;
+           for (int div = 1;  div <n ; div++) {
+               if (i % div==0){
+                 count++;
+
+               }
+
+           }
+            if (count==2){
+                System.out.println(i);
+            }
+            }
+
+
+       }
+   }
+public class Main {
+static boolean isprime(int n) {
+ if (n <= 1) {
+  return false;
+ }
+ int c = 2;
+ while (c * c <= n) {
+  if (n % c == 0) {
+   return false;
+  }
+  c++;
+ }
+ return true; // ✅ direct return kar do
+}
+
+public static void main(String[] args) {
+ // Test
+ System.out.println(isprime(2));  // true
+ System.out.println(isprime(15)); // false
+ System.out.println(isprime(17)); // true
+}
+}
+Fibonacci Function
+Write a function that prints the first n terms of the Fibonacci series.
+
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+ Scanner input = new Scanner(System.in);
+ int n = input.nextInt();
+ int previous = 0 ;
+ int next = 1;
+ for (int i = 1; i <n ; i++) {
+  int temp = previous + next;
+  previous = next;
+  next = temp;
+  System.out.println(next);
+
+ }
+ System.out.println(next);
+
+
+}
+}
+
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+public class Main {
+static int fib(int n){
+ int previous = 0;
+ int next = 1;
+ for (int i = 1; i <=n ; i++) {
+       int temp  = previous + next;
+       previous = next;
+       next=temp;
+ }
+    return previous;
+
+}
+
+ public static void main(String[] args) {
+  Scanner input = new Scanner(System.in);
+  int n = input.nextInt();
+  System.out.println(fib(n));
+
+ }
+}
+Reverse a Number
+Write a function that takes an integer and returns the reversed number
+
+
+public class Main {
+   static int reverse(int n ){
+        int reverse = 0;
+        while (n > 0){
+             int n1 = n % 10;
+             reverse = reverse * 10 + n1;
+              n = n/10;
+
+        }
+          return reverse;
+   }
+
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int n = input.nextInt();
+       System.out.println(reverse(n));
+   }
+}
+LCM using GCD
+
+public class Main {
+   static int gcd(int n , int n2){
+       int gcd = 1;
+       for (int i = 2; i <=Math.min(n,n2) ; i++) {
+           if (n % i ==0 && n2 % i==0){
+               gcd = i;
+
+           }
+
+
+       }
+       return gcd;
+
+   }
+
+   static int lcm(int n, int n2) {
+       return (n * n2) / gcd(12,18);
+   }
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       System.out.println(gcd(12,18));
+       System.out.println(lcm(12,18));
+   }
+}
+
+public class Main {
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int n = input.nextInt();
+
+       int primarycount=0;
+       int num =0;
+
+        while (primarycount<n){
+            int count = 0;
+            num++;
+            for (int div = 1; div <=num ; div++) {
+                if (num % div==0){
+                    count++;
+                }
+
+            }
+                 if (count==2){
+                     primarycount++;
+                 }
+
+
+        }
+       System.out.println(num);
+   }
+
+}
+
+  public class Main {
+      static int nth(int n ){
+
+          int primarycount=0;
+          int nums =1;
+          while (primarycount<n){
+              int count =0;
+              nums++;
+              for (int div = 1; div <=nums ; div++) {
+                  if (nums%div==0){
+                      count++;
+
+                  }
+
+
+
+              }
+              if (count==2){
+                  primarycount++;
+              }
+
+          }
+          return nums;
+      }
+
+      public static void main(String[] args) {
+          Scanner input = new Scanner(System.in);
+          int n = input.nextInt();
+          System.out.println(nth(n));
+          }
+      }
+Digit Count – Write a function to count the number of digits in an integer.
+Digit Count – Write a function to count the number of digits in an integer.
+public class Main {
+   public static void main(String[] args) {
+       int n = 342992;
+       int count = 0;
+       while (n > 0) {
+           int digit = n %10;
+           count++;
+           n = n /10;
+       }
+       System.out.println(count);
+
+   }
+
+}
+
+public class Main {
+   static int count(int n) {
+       int count = 0;
+       while (n > 0) {
+           int digit = n %10;
+           count++;
+           n = n /10;
+       }
+      return count;
+
+   }
+
+   public static void main(String[] args) {
+       System.out.println(count(76656));
+   }
+
+}
+
+public class Main {
+   public static void main(String[] args) {
+       int n = 145;         // number to check
+       int original = n;    // original number ko save kar lo
+       int sum = 0;         // factorials ka sum store karega
+
+       while (n > 0) {
+           int rem = n % 10;   // last digit
+           int fact = 1;
+
+           // factorial of digit
+           for (int i = 1; i <= rem; i++) {
+               fact = fact * i;
+           }
+
+           sum = sum + fact;   // add to sum
+           n = n / 10;         // remove last digit
+       }
+
+       // check strong number
+       if (sum == original) {
+           System.out.println(original + " is a Strong Number");
+       } else {
+           System.out.println(original + " is NOT a Strong Number");
+       }
+   }
+}
+
+public class Main {
+   public static void main(String[] args) {
+       int n = 145;
+       int original = n;
+       int sum = 0;
+
+       while (n > 0) {
+           int rem = n % 10;
+           n = n / 10;
+           int fact = 1;
+
+
+           for (int i = 1; i <= rem; i++) {
+               fact = fact * i;
+           }
+
+           sum = sum + fact;
+       }
+
+
+       if (sum == original) {
+           System.out.println(original + " is a Strong Number");
+       } else {
+           System.out.println(original + " is NOT a Strong Number");
+       }
+   }
+}
+      public class Main {
+          static boolean strong(int n ){
+              int sum = 0 ;
+              int original =n;
+              while (n >0){
+                   int rem = n % 10;
+                    n= n/10;
+                  int fact =1;
+                  for (int i = 1; i <=rem ; i++) {
+                      fact = fact*i;
+
+                  }
+                      sum = sum+fact;
+              }
+                 return sum ==original;
+          }
+
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int n  = input.nextInt();
+       System.out.println(strong(n));
+   }
+}
+ public class Main {
+   public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+       int n = input.nextInt();
+       int original = n;
+       int sum = 0;
+       for (int div = 1; div <=n/2; div++) {
+
+           if (n % div==0){
+               sum =sum+div;
+       }
+
+       }
+        if (sum==original){
+            System.out.println("perfect");
+        }else {
+            System.out.println("not ");
+        }
+
+   }
+}
+
+
+public class Main {
+      static String perfect(int n) {
+        Scanner input = new Scanner(System.in);
+        int original = n;
+        int sum = 0;
+        for (int div = 1; div <= n / 2; div++) {
+
+            if (n % div == 0) {
+                sum = sum + div;
+
+            }
+              if (sum==original){
+                 return "perfect";
+
+        }
+
+    }
+            return "false";
+
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.println(perfect(n));
+    }
+}
