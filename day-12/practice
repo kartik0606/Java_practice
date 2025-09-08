@@ -1,0 +1,253 @@
+import javax.swing.plaf.PanelUI;
+import java.util.Scanner;
+
+//import java.util.Scanner;
+//
+////9. Frequency of elements
+////👉 Count how many times each number occurs.
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[] arr = new int[n];
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = input.nextInt();
+//
+//        }
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] == Integer.MIN_VALUE) continue;
+//            int count = 1;
+//            for (int j = i+1; j < arr.length; j++) {
+//                if (arr[i] == arr[j]) {
+//                    count++;
+//                    arr[j] = Integer.MIN_VALUE;
+//
+//                }
+//
+//            }
+//            System.out.println(count);
+//        }
+//    }
+//}
+//Left rotation of array by 1
+//
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[]arr = new int[n];
+//        for (int i = 0; i <arr.length ; i++) {
+//            arr[i] = input.nextInt();
+//
+//        }
+//          int first = arr[0];
+//        for (int i = 0; i <arr.length-1 ; i++) {
+//            arr[i] = arr[i+1];
+//
+//        }
+//          arr[arr.length-1]=first;
+//        for (int i = 0; i <arr.length ; i++) {
+//            System.out.print(arr[i] + " ");
+//
+//        }
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[] arr = new int[n];
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = input.nextInt();
+//
+//        }
+//        System.out.println(issorted(arr));
+//
+//    }
+//
+//    static boolean issorted(int[] arr) {
+//        for (int i = 0; i < arr.length-1; i++) {
+//             if (arr[i]>arr[i+1]){
+//                 return false;
+//             }
+//
+//        }
+//          return true;
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[] arr = new int[n];
+//        int max = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = input.nextInt();
+//            if (arr[i] > max){
+//                max = arr[i];
+//            }
+//
+//        }
+//        System.out.println(max);
+//
+//    }
+//}
+//Find the second largest element in an array
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[] arr = new int[n];
+//        int max = Integer.MIN_VALUE;
+//        int secondlargest = Integer.MIN_VALUE;
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = input.nextInt();
+//            if (arr[i] > max) {
+//                max = arr[i];
+//            }
+//
+//        }
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] < max && arr[i] > secondlargest) {
+//                secondlargest = arr[i];
+//            }
+//
+//        }
+//        System.out.println(secondlargest);
+//    }
+//}
+//Find the smallest element in an array
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int min = Integer.MAX_VALUE;
+//        int[]arr = new int[n];
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = input.nextInt();
+//
+//        }
+//        for (int j = 0; j <arr.length ; j++) {
+//           if(arr[j]<min){
+//               min = arr[j];
+//           }
+//
+//
+//        }
+//        System.out.println(min);
+//
+//    }
+//
+//}
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[]arr = new int[n];
+//        for (int i = 0; i <arr.length ; i++) {
+//             arr[i] = input.nextInt();
+//
+//        }
+//        for (int i = arr.length-1; i >=0 ; i--) {
+//            System.out.print(arr[i]+ " ");
+//
+//        }
+//    }
+//
+//}
+//Check if an array is sorted (ascending/descending)
+//\import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//
+//        // Get the size of the array
+//        System.out.print("Enter the number of elements: ");
+//        int n = input.nextInt();
+//
+//        // Create and populate the array
+//        int[] arr = new int[n];
+//        System.out.println("Enter " + n + " integers:");
+//        for (int i = 0; i < n; i++) {
+//            arr[i] = input.nextInt();
+//        }
+//
+//        // Check if the array is sorted and display the result
+//        System.out.println("The array is " + checkSorted(arr));
+//
+//        input.close();
+//    }
+//
+//    static String checkSorted(int[] arr) {
+//        if (arr.length <= 1) {
+//            return "sorted (trivial case - only one element)";
+//        }
+//
+//        boolean isAscending = true;
+//        boolean isDescending = true;
+//
+//        // Check both ascending and descending order
+//        for (int i = 0; i < arr.length - 1; i++) {
+//            if (arr[i] > arr[i + 1]) {
+//                isAscending = false;
+//            }
+//            if (arr[i] < arr[i + 1]) {
+//                isDescending = false;
+//            }
+//        }
+//
+//        if (isAscending) {
+//            return "sorted in ascending order";
+//        } else if (isDescending) {
+//            return "sorted in descending order";
+//        } else {
+//            return "not sorted";
+//        }
+//    }
+//}
+import java.util.Scanner; // Added import
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = input.nextInt();
+        }
+        System.out.println(issorted(arr));
+    }
+
+    static String issorted(int[] arr) {
+        if (arr.length <= 1) {
+            return "sorted";
+        }
+
+        boolean isAscending = true;
+        boolean isDescending = true;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                isAscending = false;
+            }
+            if (arr[i] < arr[i + 1]) {
+                isDescending = false;
+            }
+        }
+
+        if (isAscending) {
+            return "sorted in ascending order";
+        } else if (isDescending) {
+            return "sorted in descending order";
+        } else {
+            return "unsorted";
+        }
+    }
+}
+
+
