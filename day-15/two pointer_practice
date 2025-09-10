@@ -1,0 +1,343 @@
+import javax.naming.PartialResultException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+//import java.util.Arrays;
+//public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = { 0 ,0,1,0,1,0,1,0,1,0,0,1};
+//        sortzero(arr);
+//        System.out.println(Arrays.toString(arr));
+//
+//    }
+//    static void sortzero(int[]arr){
+//        int n = arr.length;
+//        int left =0;
+//        int right = n-1;
+//        while (left < right){
+//            if (arr[left]==1&&arr[right]==0){
+//                swap(arr,left,right);
+//                left++;
+//                right--;
+//            }
+//            if (arr[left]==0){
+//                left++;
+//            }
+//            if (arr[right]==1){
+//                right--;
+//            }
+//        }
+//
+//    }
+//    static void swap(int[]arr,int i , int j){
+//        int temp = arr[i];
+//        arr[i] = arr[j];
+//        arr[j] = temp;
+//    }
+//
+//
+//}
+//   public class Main {
+//    public static void main(String[] args) {
+//         int[]arr = {1,0,0,1,0,1,0,1};
+//         issorted(arr);
+//        System.out.println(Arrays.toString(arr));
+//
+//    }
+//    static void issorted(int[]arr){
+//        int n = arr.length;
+//        int left = 0;
+//        int right =n-1;
+//        while (left<right){
+//            if (arr[left] == 1 && arr[right]==0){
+//                swap(arr,left,right);
+//                left++;
+//                right--;
+//            }
+//             if (arr[left]==0){
+//                 left++;
+//             }
+//             if (arr[right]==1){
+//                     right--;
+//            }
+//        }
+//    }
+//    static void swap(int[]arr ,int i , int j){
+//        int temp =arr[i];
+//        arr[i] = arr[j];
+//        arr[j] = temp;
+//
+//    }
+//}
+// public class Main {
+//    public static void main(String[] args) {
+//         int[]arr = { 1,0,1,0,1,0,1,0,1,0,1,0,1,0};
+//         issorted(arr);
+//        System.out.println(Arrays.toString(arr));
+//
+//    }
+//
+//    static void issorted(int[] arr) {
+//        int n = arr.length;
+//        int left = 0;
+//        int right = n - 1;
+//        while (left < right) {
+//            if (arr[left] == 1 && arr[right] == 0) {
+//                swap(arr, left, right);
+//                left++;
+//                right--;
+//            }
+//            if (arr[left] == 0) {
+//                left++;
+//                right--;
+//            }
+//            if (arr[right] == 1) {
+//                left++;
+//                right--;
+//
+//            }
+//        }
+//
+//    }
+//        static void swap(int[]arr , int i , int j ){
+//            int temp = arr[i];
+//            arr[i] = arr[j];
+//            arr[j] = temp;
+//        }
+//}
+
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1,11,7,2,6,13,16,18,7};
+//        isevenoddsorted(arr);
+//        System.out.println(Arrays.toString(arr));
+//
+//    }
+//
+//    static void isevenoddsorted(int[] arr) {
+//        int n = arr.length;
+//        int left = 0;
+//        int right = n - 1;
+//        while (left < right) {
+//            if (arr[left] % 2!= 0 && arr[right] % 2== 0) {
+//                swap(arr, left, right);
+//                left++;
+//                right--;
+//            } else if (arr[left] % 2 == 0) {
+//                left++;
+//
+//            }
+//            else if (arr[right] % 2!=0) {
+//                right--;
+//            }
+//        }
+//    }
+//
+//    static void swap(int[] arr, int i, int j) {
+//        int temp = arr[i];
+//        arr[i] = arr[j];
+//        arr[j] = temp;
+//    }
+//
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {-13, -11, 4, 33, 55};
+//        int[] result = isdeac(arr);
+//        System.out.println(Arrays.toString(result));
+//    }
+//
+//
+//static int[] isdeac(int[] arr) {
+//    int n = arr.length;
+//    int left = 0;
+//    int right = n - 1;
+//    int k = n-1;
+//    int[] ans = new int[n];
+//    while (left <= right) {
+//        if (Math.abs(arr[left]) > Math.abs(arr[right])) {
+//            ans[k--] = arr[left] * arr[left];
+//            left++;
+//
+//        } else {
+//            ans[k--] = arr[right] * arr[right];
+//            right--;
+//
+//        }
+//
+//    }
+//    return ans;
+//
+//
+//}
+//
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 2, 3, 5, 9, 8};
+//        int[] result = twosum(arr);
+//        {
+//          if (result[0]!=-1){
+//        System.out.println("Indices: " + result[0] + ", " + result[1]);
+//        System.out.println("Numbers: " + arr[result[0]] + ", " + arr[result[1]]);
+//
+//    }else {
+//              System.out.println("no pair found ");
+//          }
+//
+//    static int[] twosum(int[] arr) {
+//        int n = arr.length;
+//        int left = 0;
+//        int right = n - 1;
+//        int target = 7;
+//        int sum ;
+//
+//        while (left < right) {
+//            sum = arr[left] + arr[right];
+//            if (sum == target) {
+//                return new int[]{left, right};
+//            } else if (sum < target) {
+//                left++;
+//            } else {
+//                right--;
+//
+//            }
+//
+//        }
+//          return new int[] {-1,-1};
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 2, 3, 5, 9, 8};
+//        int[] result = twosum(arr); // call method
+//
+//        if (result[0] != -1) {
+//            System.out.println("Indices: " + result[0] + ", " + result[1]);
+//            System.out.println("Numbers: " + arr[result[0]] + ", " + arr[result[1]]);
+//        } else {
+//            System.out.println("No pair found");
+//        }
+//    }
+//
+//    // Method should be OUTSIDE main
+//    static int[] twosum(int[] arr) {
+//        int left = 0;
+//        int right = arr.length - 1;
+//        int target = 99;
+//
+//        while (left < right) {
+//            int sum = arr[left] + arr[right];
+//            if (sum == target) {
+//                return new int[]{left, right};
+//            } else if (sum < target) {
+//                left++;
+//            } else {
+//                right--;
+//            }
+//        }
+//
+//        return new int[]{-1, -1};
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = {1,2,3,4,5,6};
+//        int[]result = twosum(arr);
+//        System.out.println(result[0] + " " + result[1]);
+//
+//    }
+//    static int[] twosum(int[]arr){
+//        int target = 13;
+//        int n = arr.length;
+//        int left = 0;
+//        int right  = arr.length-1;   // n-1
+//        while (left<right){
+//            int sum = arr[left] + arr[right];
+//             if (sum==target){
+//                 return new int[]{left,right};
+//
+//            } else if (sum<target) {
+//                 left++;
+//
+//             }else {
+//                 right--;
+//             }
+//        }
+//          return new int[]{-1,-1};//when pair not found
+//
+//    }
+//}
+// 2. Remove Duplicates from Sorted Array
+//    * Given a sorted array nums, remove duplicates in-place so that each unique element appears only once.
+//    * Return the count of unique elements.
+//        * After removal, the first part of the array contains the unique values.
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[]arr = new int[n];
+//        for (int i = 0; i <arr.length ; i++) {
+//            arr[i]= input.nextInt();
+//
+//        }
+//        boolean isdublicte = false;
+//        for (int i = 0; i <arr.length ; i++) {
+//            for (int j = i+1; j <arr.length-1 ; j++) {
+//                 if (arr[i] == arr[j]){
+//                     isdublicte=true;
+//                     System.out.println("duplicate items is " + arr[i]+ "  ");
+//                 }
+//
+//            }
+//
+//        }
+//         if (!isdublicte){
+//             System.out.println("not duplicate");
+//
+//         }
+//
+//    }
+//}
+
+// 2. Remove Duplicates from Sorted Array
+//    * Given a sorted array nums, remove duplicates in-place so that each unique element appears only once.
+//    * Return the count of unique elements.
+//        * After removal, the first part of the array contains the unique values.
+
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+
+        int count = isduplicate(arr); // total unique elements
+
+        // Print count
+        System.out.println("Count of unique elements: " + count);
+
+        // Print unique elements
+        for (int i = 0; i < count; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    static int isduplicate(int[] arr){
+        int n = arr.length;
+        int left = 0;
+        int right = 1;
+
+        while (right < n){
+            if (arr[left] == arr[right]){
+                // duplicate, skip right
+                right++;
+            } else {
+                // unique found, move left and update position
+                left++;
+                arr[left] = arr[right];
+                right++;
+            }
+        }
+
+        return left + 1; // count of unique elements
+    }
+}
