@@ -1,0 +1,246 @@
+//public class Main {
+//    public static void main(String[] args) {
+//      int[]arr = {3, 2, 2, 3, 4, 2, 5};
+//      int newindex = element(arr);
+//        System.out.println(newindex);
+//        for (int i = 0; i <newindex ; i++) {
+//            System.out.println(arr[i]);
+//
+//        }
+//
+//    }
+//     static int element(int[]arr){
+//        int left = 0 ;
+//         int right = arr.length-1;
+//         int ele = 2;
+//         while (left<=right){
+//             if (arr[left]==ele){
+//                  arr[left]=arr[right];
+//                  right--;
+//
+//             }else {
+//                 left++;
+//             }
+//         }
+//          return left+1;
+//     }
+//}
+//3. Remove Element (In-Place)
+//    * Given an array arr[] and a value ele, remove all occurrences of ele in-place.
+//    * Return the new length of the array.
+//        * The order of remaining elements may change.
+//public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = {3, 2, 2, 3, 4, 2, 5};
+//        int newindex = element(arr);
+//        System.out.println("New index = " + newindex);
+//        for (int i = 0; i <newindex ; i++) {
+//            System.out.println(arr[i]);
+//
+//        }
+//
+//    }
+//
+//    static int element(int[] arr) {
+//        int left = 0;
+//        int right = arr.length - 1;
+//        int ele = 3;
+//        while (left <= right) {
+//            if (arr[left] == ele) {
+//                arr[left] = arr[right];
+//                right--;
+//
+//            } else {
+//                left++;
+//            }
+//        }
+//        return left;
+//    }
+//}
+
+import java.util.Arrays;
+
+//import java.util.Arrays;
+//
+////4. Move Zeroes to End
+////    * Given an array of integers, move all the zeros to the end.
+////    * Maintain the relative order of non-zero elements.
+////        * Can be done in one pass with two pointers.
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {0, 0, 0, 0, 0, 1, 2, 3, 4, 5};
+//        movezero(arr);
+//        System.out.println(Arrays.toString(arr));
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.print(arr[i] + "  ");
+//
+//        }
+//
+//    }
+//
+//    static void movezero(int[] arr) {
+//        int left = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] != 0) {
+//                swap(arr, left, i);
+//                left++;
+//            }
+//
+//
+//        }
+//    }
+//
+//    static void swap(int[] arr, int i, int j) {
+//        int temp = arr[i];
+//        arr[i] = arr[j];
+//        arr[j] = temp;
+//
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+//        int[] result = Twosum(arr);
+//        System.out.println(result[0] + "   " + result[1]);
+//        System.out.println(arr[result[0]] + "   " + arr[result[1]]);
+//
+//    }
+//
+//    static int[] Twosum(int[] arr) {
+//        int target = 11;
+//        int left = 0;
+//        int right = arr.length - 1;
+//        while (left < right) {
+//            int sum = arr[left] + arr[right];
+//            if (sum == target) {
+//                return new int[]{left,right};
+//            } else if (sum < target) {
+//                left++;
+//            } else {
+//                right--;
+//            }
+//        }
+//        {
+//
+//        }
+//        return new int[]{-1, -1};
+//
+//    }
+//}
+// public class Main {
+//    public static void main(String[] args) {
+//         int[]arr = {1,0,2,0,3,0,4,0,5,0};
+//          Movezero(arr);
+//        System.out.println(Arrays.toString(arr));
+//        for (int i = 0; i <arr.length ; i++) {
+//            System.out.print(arr[i] + "  ");
+//        }
+//
+//    }
+//    static void Movezero(int[]arr){
+//        int left = 0;
+//        for (int i = 0; i < arr.length ; i++) {
+//            if (arr[i]!=0){
+//                swap(arr,left,i);
+//                left++;
+//
+//            }
+//
+//
+//        }
+//
+//    }
+//     static void swap(int[]arr,int i , int j ){
+//          int temp = arr[i];
+//         arr[i] = arr[j];
+//         arr[j] = temp;
+//
+//     }
+//}
+
+////2. Remove Duplicates from Sorted Array
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 1, 1, 2, 2, 3, 4, 4};
+//        int count = Duplicate(arr);
+//        System.out.println(count);
+//        for (int i = 0; i < count; i++) {
+//            System.out.print(arr[i] + " ");
+//
+//        }
+//
+//    }
+//
+//    static int Duplicate(int[] arr) {
+//        int left = 0;
+//        int right = 1;
+//        if (arr.length == 0) return 0;
+//        while (right < arr.length) {
+//            if (arr[left] != arr[right]) {
+//                left++;
+//                arr[left] = arr[right];
+//            }
+//            right++;
+//        }
+//        return left + 1;
+//    }
+//}
+
+////2. Remove Duplicates from Sorted Array
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 1, 1, 7,7,8,8,6,6,9,9};
+//        int count = Duplicate(arr);
+//        System.out.println(count);
+//        for (int i = 0; i < count; i++) {
+//            System.out.print(arr[i] + " ");
+//
+//        }
+//
+//    }
+//
+//    static int Duplicate(int[] arr) {
+//        int left = 0;
+//        int right = 1;
+//        while (right < arr.length) {
+//            if (arr[left] != arr[right]) {
+//                left++;
+//                arr[left] = arr[right];
+//            }else {
+//                right++;
+//            }
+//
+//        }
+//        return left+1;
+//    }
+//}
+//
+public class Main {
+    public static void main(String[] args) {
+         int[]arr = { 1,1,2,3,3,3,4,4,5};
+          int count = Duplicate(arr);
+        System.out.println(count);
+        for (int i = 0; i < count ; i++) {
+            System.out.println(arr[i]);
+
+        }
+
+    }
+     static int Duplicate(int[]arr){
+         int left = 0;
+         int right = 1;
+
+         while (right < arr.length){
+             if (arr[left]!=arr[right]){
+                 left++;
+                 arr[left]=arr[right];
+
+             }else {
+                 right++;
+             }
+
+         }
+          return left+1;
+
+     }
+}
