@@ -1,0 +1,155 @@
+import java.util.Arrays;
+
+//8. Squares of a Sorted Array
+//    * Given a sorted array of integers (which may include negatives), return an array of the squares of each number.
+//        * Output should also be sorted in non-decreasing order.
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {-1,2,3,4,5,-9};
+
+        int[] result = Sqaure(arr);
+
+        System.out.println(Arrays.toString(result));
+    }
+    static int[] Sqaure(int []arr){
+         int left = 0 ;
+         int n = arr.length;
+          int right = arr.length-1;
+          int ans[] = new int[n];
+          int a= arr.length-1;
+          while (left<=right){
+             if (Math.abs(arr[left])> Math.abs(arr[right])){
+                 ans[a] =   arr[left]*arr[left];
+                 left++;
+
+               }else {
+                     ans[a] =   arr[right] * arr[right];
+                     right--;
+
+             }
+             a--;
+          }
+          return ans;
+
+    }
+}
+
+// public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = {1,77,2,3,-5,88};
+//        Arrays.sort(arr);
+//        int[] result = Sqaure(arr);
+//        System.out.println(Arrays.toString(result));
+//
+//
+//    }
+//     static int[] Sqaure(int[]arr){
+//        int left =0;
+//        int right = arr.length-1;
+//        int n = arr.length;
+//        int[]ans = new int[n];
+//        int k =arr.length-1;
+//        while (left<=right){
+//             if (Math.abs(arr[left])>Math.abs(arr[right])){
+//                 ans[k] = arr[left]*arr[left];
+//                 left++;
+//
+//            }else {
+//                 ans[k] = arr[right]*arr[right];
+//                 right--;
+//             }
+//             k--;
+//
+//        }
+//         return ans;
+//
+//     }
+//}
+// public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = {1,77,2,3,-5,88};
+//        Arrays.sort(arr);
+//        int[] result = Sqaure(arr);
+//        System.out.println(Arrays.toString(result));
+//
+//    }
+//    static int[] Sqaure(int[]arr) {
+//        int left = 0;
+//        int right = arr.length - 1;
+//        int n = arr.length;
+//        int[] ans = new int[n];
+//        int k = ans.length-1;
+//        while (left <= right) {
+//            if (Math.abs(arr[left]) > Math.abs(arr[right])) {
+//                ans[k] = arr[left] * arr[left];
+//                left++;
+//
+//            } else {
+//                ans[k] = arr[right] * arr[right];
+//                right--;
+//            }
+//            k--;
+//        }
+//        return ans;
+//    }
+//}9. Sort Array By Parity
+//    * Given an integer array nums, rearrange it so that all even numbers come before all odd numbers.
+//         * This can be done in-place with a left/right pointer scanning from both ends.
+
+//public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = { 1,2,3,4,5,6,7,8};
+//        Arrays.sort(arr);
+//        Arrange(arr);
+//        System.out.println(Arrays.toString(arr));
+//
+//    }
+//
+//    static void Arrange(int[] arr) {
+//        int left = 0;
+//        int right = arr.length - 1;
+//        while (left <= right) {
+//            if (arr[left] % 2 != 0 && arr[right] % 2 == 0) {
+//                swap(arr, left, right);
+//                left++;
+//                right--;
+//            } else if (arr[left] % 2 == 0) {
+//                left++;
+//
+//
+//            } else if (arr[right] % 2 != 0) {
+//                right--;
+//
+//            }
+//        }
+//    }
+//
+//    static void swap(int[] arr, int i, int j) {
+//        int temp = arr[i];
+//        arr[i] = arr[j];
+//        arr[j] = temp;
+//
+//
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int max = Integer.MIN_VALUE;
+//        int second = Integer.MIN_VALUE;
+//        int[] arr = {233,44,222,556,4324};
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] > max) {
+//                second = max;
+//                max = arr[i];
+//
+//            } else if (arr[i] < max && arr[i] > second) {
+//                arr[i] = second;
+//
+//            }
+//        }
+//        System.out.println("Largest number is -> " + max);
+//        System.out.println("Second largest number is -> " + second);
+//
+//    }
+//}
