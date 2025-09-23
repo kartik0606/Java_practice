@@ -1,0 +1,248 @@
+//public class Main {
+//    public static void main(String[] args) {
+//         int[]arr = { 1,2,3,4,5,6};
+//        for (int i = 0; i <= arr.length-3 ; i++) {
+//            int sum = 0 ;
+//            for (int j = i; j < i+3 ; j++) {
+//                 sum = sum + arr[j];
+//
+//
+//            }
+//            System.out.println(sum);
+//
+//
+//        }
+//
+//
+//        }
+//
+//    }
+//
+// public class Main {
+//    public static void main(String[] args) {
+//        int []arr = {1,2,3,4,5,6,7,8,9};
+//        int k =3 ;
+//        for (int i = 0; i <=arr.length-k ; i++) {
+//            int sum =0;
+//            int max = Integer.MIN_VALUE;
+//            for (int j = i; j <i+k ; j++) {
+//                sum = sum + arr[j];
+//                if (arr[j]>max){
+//                    max = arr[j];
+//                }
+//
+//
+//            }
+//            System.out.println(sum);
+//            System.out.println(max);
+//
+//
+//
+//        }
+//    }
+//}
+
+
+//Sliding window — Maximum-sum subarray of size K
+
+//public class Main {
+//    public static void main(String[] args) {
+//         int[]arr = { 1,2,3,4,5,6,};
+//         int k = 3;
+//        System.out.println(Maxsum(arr,k));
+//
+//    }
+//     static int Maxsum(int[]arr , int k ){
+//         int left = 0;
+//         int right  = 0 ;
+//          int sum = 0 ;
+//          int max = Integer.MIN_VALUE;
+//          while (right<k){
+//              sum = sum+arr[right];
+//              right++;
+//          }
+//           max = sum;
+//
+//          while (right<arr.length){
+//              sum = sum+arr[right];
+//              sum = sum-arr[left];
+//              right++;
+//              left++;
+//              max = Math.max(max,sum);
+//
+//
+//          }
+//          return max;
+//     }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 2, 3, 4, 5, 6};
+//        int k = 3;
+//        Maxsum(arr, k);
+//        System.out.println(Maxsum(arr, k));
+//    }
+//
+//    static int Maxsum(int[] arr, int k) {
+//        int left = 0;
+//        int right = 0;
+//        int sum = 0;
+//        int max = Integer.MIN_VALUE;
+//        while (right < k) {
+//            sum = sum + arr[right];
+//            right++;
+//        }
+//        max = sum;
+//        while (right < arr.length) {
+//            sum = sum + arr[right];
+//            sum = sum - arr[left];
+//            right++;
+//            left++;
+//
+//            max = Math.max(max, sum);
+//
+//        }
+//        return max;
+//
+//    }
+//
+//}
+
+//first negative no in every window of size k solve with the help of brute force
+//
+// public class Main {
+//     public static void main(String[] args) {
+//         int[]arr = {12,-1,-7,8,-15,30,16,9};
+//         int k  = 3 ;
+//         for (int i = 0; i <= arr.length-k ; i++) {
+//               int firstnegative  = 0 ;
+//             for (int j = i; j <i+k ; j++) {//why j <i+k
+//                  if (arr[j]<0){
+//                      firstnegative = arr[j];
+//                      break; // and why we use break condition
+//                  }
+//
+//
+//             }
+//             System.out.println(firstnegative);
+//
+//         }
+//
+//     }
+//
+//
+//}
+//first negative no in every window of size k solve with the help of sliding window
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {12, -1, -7, 8, -15, 30, 16, 9};
+//        int left = 0;
+//        int right = 0;
+//        int first = -1; // pehla negative track karne ke liye
+//        int k = 3;
+//
+//        while (right < arr.length) {
+//            // Agar current element negative hai aur first abhi set nahi hai
+//            if (arr[right] < 0 && first == -1) {
+//                first = right;
+//            }
+//
+//            // Jab window complete ho jaye (size = k)
+//            if (right - left + 1 == k) {
+//                // Print first negative if present
+//                if (first >= left && first <= right) {
+//                    System.out.println(arr[first]);
+//                } else {
+//                    System.out.println("0");
+//                }
+//
+//                // Slide window
+//                left++;
+//
+//
+//                if (first < left) {
+//                    first = -1;
+//                }
+//            }
+//
+//
+//            right++;
+//        }
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {12, -1, -7, 8, -15, 30, 16, 9};
+//        int k = 3;
+//        Negative(arr, k);
+//    }
+//
+//    static void Negative(int[] arr, int k) {
+//        int left = 0;
+//        int right = 0;
+//        int first = -1;
+//
+//        while (right < arr.length) {
+//
+//            if (arr[right] < 0 && first == -1) {
+//                first = right;
+//            }
+//
+//
+//            if (right - left + 1 == k) {
+//
+//                if (first >= left && first <= right) {
+//                    System.out.println(arr[first]);
+//                } else {
+//                    System.out.println("0");
+//                }
+//
+//                left++;
+//
+//                if (first < left) {
+//                    first = -1;
+//                }
+//            }
+//
+//
+//            right++;
+//        }
+//    }
+//}
+public class Main {
+    public static void main(String[] args) {
+        int[] arr =  {12, -1, -7, 8, -15, 30, 16, 9};
+        int k = 3;
+        Negative(arr, k);
+
+    }
+
+    static void Negative(int[] arr, int k) {
+        int left = 0;
+        int right = 0;
+        int negativee = -1;
+        while (right < arr.length) {
+            if (arr[right] < 0 && negativee == -1) {
+                negativee = right;
+
+            }
+            if (right - left + 1 == k) {
+                if (negativee >= left && negativee <= right) {
+                    System.out.println(arr[negativee]);
+
+                } else {
+                    System.out.println("0");
+
+                }
+                left++;
+
+                if (negativee < left) {
+                    negativee = -1;
+                }
+            }
+            right++;
+        }
+
+    }
+}
