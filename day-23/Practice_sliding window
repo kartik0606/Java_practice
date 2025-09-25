@@ -1,0 +1,291 @@
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, -3, 9, -5, 88, -88, 4, 2, -12};
+//        int k = 3;
+//        Negative(arr, k);
+//
+//    }
+//
+//    static void Negative(int[] arr, int k) {
+//        int left = 0;
+//        int right = 0;
+//        int negativeeee = -1;
+//        while (right < arr.length) {
+//            if (arr[right] < 0 && negativeeee == -1) {
+//                negativeeee = right;
+//            }
+//            if (right - left + 1 == k) {
+//                if (negativeeee >= left && negativeeee <= right) {
+//                    System.out.println(arr[negativeeee]);
+//
+//                } else {
+//                    System.out.println("0");
+//                }
+//                left++;
+//                if (negativeeee < left) {
+//                    negativeeee = -1; // reset
+//                    for (int i = left; i <= right; i++) {
+//                        if (arr[i] < 0) {
+//                            negativeeee = i;
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//            right++;
+//        }
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = { 1,-9,-55,-8,6,7,99};
+//        int k = 3;
+//        negativefirst(arr,k);
+//
+//    }
+//    static void negativefirst(int[]arr , int k ){
+//        int left = 0 ;
+//        int right  = 0 ;
+//         int negative = -1;
+//         while (right<arr.length){
+//             if (arr[right]< 0  && negative==-1){
+//                 negative = right;
+//
+//             }if (right-left+1==k){
+//                 if (negative>=left&&negative<=right){
+//                     System.out.println(arr[negative]);
+//
+//                 }else {
+//                     System.out.println("0");
+//                 }
+//                  left++;
+//             }
+//              if (negative<left){
+//                  negative =-1;
+//                  for (int i = left; i <=right ; i++) {
+//                      if (arr[i]<0){
+//                          negative = i;
+//                          break;
+//                      }
+//
+//
+//                  }
+//              }
+//               right++;
+//         }
+//
+//    }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[]arr = {1,2,3,4,5};
+//        int k =3 ;
+//        System.out.println(subsum(arr,k));
+//
+//    }
+//     static int subsum(int[]arr , int k ){
+//        int left = 0 ;
+//         int right = 0;
+//         int sum = 0 ;
+//         int max = Integer.MIN_VALUE;
+//         while (right<k){
+//              sum = sum+arr[right];
+//                right++;
+//         }
+//          max = sum;
+//         while (right<arr.length){
+//             sum = sum+arr[right];
+//             sum = sum-arr[left];
+//             left++;
+//             right++;
+//             max = Math.max(max,sum);
+//         }
+//          return max;
+//     }
+//}
+
+import java.util.Arrays;
+
+//import java.util.*;
+//
+//public class Main {
+//    public static int countAnagrams(String txt, String pat) {
+//        int n = txt.length();
+//        int k = pat.length();
+//        if (k > n) return 0;
+//
+//        // Frequency array for pattern and current window
+//        int[] patFreq = new int[26];
+//        int[] windowFreq = new int[26];
+//
+//        // Fill pattern frequency using old-style loop
+//        for (int i = 0; i < k; i++) {
+//            char c = pat.charAt(i);
+//            patFreq[c - 'a']++;
+//        }
+//
+//        // First window
+//        for (int i = 0; i < k; i++) {
+//            char c = txt.charAt(i);
+//            windowFreq[c - 'a']++;
+//        }
+//
+//        int count = 0;
+//        if (Arrays.equals(windowFreq, patFreq)) {
+//            count++;
+//        }
+//
+//        // Slide the window
+//        for (int i = k; i < n; i++) {
+//            char newChar = txt.charAt(i);
+//            char oldChar = txt.charAt(i - k);
+//
+//            windowFreq[newChar - 'a']++;  // add new char
+//            windowFreq[oldChar - 'a']--;  // remove old char
+//
+//            if (Arrays.equals(windowFreq, patFreq)) {
+//                count++;
+//            }
+//        }
+//
+//        return count;
+//    }
+//
+//    public static void main(String[] args) {
+//        String txt1 = "forxxorfxdofr";
+//        String pat1 = "for";
+//        System.out.println(countAnagrams(txt1, pat1)); // Output: 3
+//
+//        String txt2 = "aabaabaa";
+//        String pat2 = "aaba";
+//        System.out.println(countAnagrams(txt2, pat2)); // Output: 4
+//    }
+//}
+//
+import java.util.Arrays;
+import java.util.stream.Stream;
+
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        int[] arr = {1, 1, 2, 3, 3, 4, 5, 5, 6,-9,-9};
+//        Arrays.sort(arr);
+//        int count = Duplicate(arr);
+//        System.out.println("No of counts of arr is  -> "  + count);
+//        for (int i = 0; i < count; i++) {
+//            System.out.print(arr[i] +  " " );
+//
+//        }
+//
+//    }
+//
+//    static int Duplicate(int[] arr) {
+//        int n = arr.length;
+//        int left = 0;
+//        int right = 1;
+//        while (right < n) {
+//            if (arr[left] != arr[right]) {
+//                left++;
+//                arr[left] = arr[right];
+//            } else {
+//                right++;
+//            }
+//        }
+//        return left + 1 ;
+//
+//    }
+//}
+//
+
+import java.util.Arrays;
+
+import java.util.*;
+
+//public class Main {
+//    public static int countAnagrams(String txt, String pat) {
+//        int n = txt.length();
+//        int k = pat.length();
+//        if (k > n) return 0;
+//
+//        // Frequency array for pattern and current window
+//        int[] patFreq = new int[26];
+//        int[] windowFreq = new int[26];
+//
+//        // Fill pattern frequency using old-style loop
+//        for (int i = 0; i < k; i++) {
+//            char c = pat.charAt(i);
+//            patFreq[c - 'a']++;
+//        }
+//
+//        // First window
+//        for (int i = 0; i < k; i++) {
+//            char c = txt.charAt(i);
+//            windowFreq[c - 'a']++;
+//        }
+//
+//        int count = 0;
+//        if (Arrays.equals(windowFreq, patFreq)) {
+//            count++;
+//        }
+//
+//        // Slide the window
+//        for (int i = k; i < n; i++) {
+//            char newChar = txt.charAt(i);
+//            char oldChar = txt.charAt(i - k);
+//
+//            windowFreq[newChar - 'a']++;  // add new char
+//            windowFreq[oldChar - 'a']--;  // remove old char
+//
+//            if (Arrays.equals(windowFreq, patFreq)) {
+//                count++;
+//            }
+//        }
+//
+//        return count;
+//    }
+//
+//}
+import java.util.Arrays;
+
+//public class Main {
+//    public static void main(String[] args) {
+//        String text = "cbaebabacdcbaabc";
+//        String pattern = "abc";
+//        System.out.println(Anagram(text, pattern));
+//    }
+//
+//    static int Anagram(String text, String pattern) {
+//        int n = text.length();
+//        int k = pattern.length();
+//        if (k > n) return 0;
+//
+//        int[] patfrequency = new int[26];
+//        int[] windowfrequency = new int[26];
+//
+//        // Pattern frequency
+//        for (int i = 0; i < k; i++) {
+//            patfrequency[pattern.charAt(i) - 'a']++;
+//        }
+//
+//        // First window frequency
+//        for (int i = 0; i < k; i++) {
+//            windowfrequency[text.charAt(i) - 'a']++;
+//        }
+//
+//        int count = 0;
+//        if (Arrays.equals(patfrequency, windowfrequency)) count++;
+//
+//        // Sliding window
+//        for (int i = k; i < n; i++) {
+//            char newchar = text.charAt(i);
+//            char oldchar = text.charAt(i - k);
+//            windowfrequency[newchar - 'a']++;
+//            windowfrequency[oldchar - 'a']--;
+//
+//            if (Arrays.equals(patfrequency, windowfrequency)) count++;
+//        }
+//
+//        return count;
+//    }
+//}
+
