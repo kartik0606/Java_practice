@@ -1,0 +1,118 @@
+//import java.util.Arrays;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        String text = "abccbavbcbaccab";
+//        String pattern = "abc";
+//        System.out.println(Anagram(text,pattern));
+//
+//    }
+//     static int Anagram(String text , String pattern){
+//        int n = text.length();
+//        int k = pattern.length();
+//        if (k>n){
+//            return 0;
+//        }
+//        int[] patfrequency = new int[26];
+//        int[] windowfrequency = new  int[26];
+//
+//         for (int i = 0; i <pattern.length() ; i++) {
+//             patfrequency[pattern.charAt(i)-'a']++;
+//
+//         }
+//         for (int i = 0; i <pattern.length() ; i++) {
+//             windowfrequency[text.charAt(i) - 'a']++;
+//         }
+//
+//             int count =0;
+//             if (Arrays.equals(patfrequency,windowfrequency))
+//                 count++;
+//
+//         for (int i = pattern.length(); i <text.length() ; i++) {
+//              char newchar = text.charAt(i);
+//              char oldchar = text.charAt(i-pattern.length());
+//
+//              windowfrequency[newchar-'a']++;
+//              windowfrequency[oldchar-'a']--;
+//               if (Arrays.equals(patfrequency,windowfrequency))
+//                   count++;
+//
+//
+//         }
+//         return count;
+//
+//
+//
+//     }
+//}
+
+// public class Main {
+//     public static void main(String[] args) {
+//         int[]arr = { 432,89,4324,987,543,66,8787,5434};
+//         int k = 2 ;
+//         Max(arr,k);
+//
+//     }
+//      static void Max(int[]arr , int k ){
+//          int left = 0 ;
+//           int right  = 0 ;
+//            while (right< arr.length){
+//                 if (right-left+1<k){
+//                     right++;
+//                 }
+//                  if (right-left+1==k){
+//                      int max = Integer.MIN_VALUE;
+//                      for (int i = left; i <=right ; i++) {
+//                          if (arr[i]>max){
+//                              max = arr[i];
+//                          }
+//
+//                      }
+//                      System.out.println(max);
+//                      left++;
+//                      right++;
+//                  }
+//            }
+//      }
+//}
+
+//public class Main {
+//    public static void main(String[] args) {
+//        int n = 76547597;
+//        int k = 2;
+//        int rotoate = 0;
+//        int temp = n;
+//        int count = 0;
+//
+//
+//        while (temp > 0) {
+//            temp = temp / 10;
+//            count++;
+//        }
+//
+//
+//        temp = n;
+//        int power = (int) Math.pow(10, count - 1);
+//        int index = 0;
+//
+//
+//        while (power > 0) {
+//            int digit = temp / power;
+//            temp = temp % power;
+//
+//            int newindex = (index + k) % count;
+//            if (newindex < 0) {
+//                newindex += count;
+//            }
+//
+//            rotoate = rotoate + digit * (int) Math.pow(10, count - 1 - newindex);
+//
+//            index++;
+//            power = power / 10;
+//        }
+//
+//
+//        System.out.println(rotoate);
+//    }
+//}
+
