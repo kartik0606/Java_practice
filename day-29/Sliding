@@ -1,0 +1,239 @@
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 1, 1, 1, 1, 2, 3, 4, 6};
+//        int result = Maxlength(arr);
+//        System.out.println(result);
+//    }
+//
+//    static int Maxlength(int[] arr) {
+//        int left = 0;
+//        int right = 0;
+//        int sum = 0;
+//        int maxlenght = 0;
+//        int k = 6;
+//        while (right < arr.length) {
+//            sum = sum + arr[right];
+//            right++;
+//            while (sum > k) {
+//                sum = sum - arr[left];
+//                left++;
+//            }
+//
+//            if (sum == k) {
+//                maxlenght = Math.max(maxlenght, right - left);
+//
+//            }
+//
+//        }
+//        return maxlenght;
+//    }
+//}
+//
+
+import java.util.HashMap;
+
+//import java.util.Arrays;
+//
+//public class Main {
+//     public static void main(String[] args) {
+//          String text = "abccbabdfacbbcacacb";
+//          String pattern ="abc";
+//         System.out.println(Anagram(text,pattern));
+//
+//     }
+//      static int Anagram(String  text , String pattern) {
+//          int n = text.length();
+//          int k = pattern.length();
+//          if (k > n){
+//          return 0;
+//      }
+//
+//          int[] patfrequency = new int[26];
+//          int[] windowfrequency = new int[26];
+//
+//          for (int i = 0; i <pattern.length() ; i++) {
+//               patfrequency[pattern.charAt(i)-'a']++;
+//
+//          }
+//          for (int i = 0; i <pattern.length() ; i++) {
+//              windowfrequency[text.charAt(i)-'a']++;
+//
+//          }
+//             int count =0;
+//          if (Arrays.equals(patfrequency,windowfrequency))
+//              count++;
+//
+//          for (int i = pattern.length(); i <text.length() ; i++) {
+//               char newchar = text.charAt(i);
+//               char oldchar = text.charAt(i-pattern.length());
+//
+//                windowfrequency[newchar-'a']++;
+//                windowfrequency[oldchar-'a']--;
+//                 if (Arrays.equals(patfrequency,windowfrequency))
+//                     count++;
+//
+//
+//          }
+//           return count;
+//
+//      }
+//
+//
+//}
+//
+//
+//import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        String s = "aabacbebebe";
+//        int k = 3;
+//
+//        // Expected longest substring with exactly 3 unique chars is "cbebebe" → length = 7
+//        System.out.println(Longestsubstring(s,k));
+//    }
+//
+//    static  int Longestsubstring( String s , int k ){
+//        int left = 0;
+//        int Maxlength = 0;
+//        HashMap<Character,Integer>map = new HashMap<>();
+//
+//        for (int right = 0; right <s.length() ; right++) {
+//            char c = s.charAt(right);
+//           map.put(c,map.getOrDefault(c,0)+1);
+//
+//           while (map.size()>k){
+//               char leftchar = s.charAt(left);
+//               map.put(leftchar,map.get(leftchar)-1);
+//
+//               if (map.get(leftchar)==0){
+//                   map.remove(leftchar);
+//               }
+//               left++;
+//           }
+//          if (map.size()==k){
+//              Maxlength = Math.max(Maxlength,right-left+1);
+//
+//          }
+//
+//        }
+//        return Maxlength;
+//    }
+//}
+// public class Main {
+//    public static void main(String[] args) {
+//
+//    }
+//
+//    static int Longeststring(String s , int k ){
+//         int left = 0 ;
+//         int right =0;
+//         int maxlength = 0;
+//        HashMap<Character,Integer>map=new HashMap<>();
+//        while (right<s.length()){
+//            char c = s.charAt(right);
+//            map.put(c,map.getOrDefault(c,0)+1);
+//
+//            }
+//
+//        }
+//    }
+//public class Main {
+//    public static void main(String[] args) {
+//        String s = "aabacbebebe";
+//        int k = 3 ;
+//        System.out.println(Longest(s,k));
+//    }
+//
+//    static int Longest(String s, int k) {
+//        int left = 0;
+//        int right = 0;
+//        int maxlength = 0;
+//
+//        HashMap<Character, Integer> map = new HashMap<>();
+//
+//        while (right<s.length()){
+//            char c = s.charAt(right);
+//            map.put(c,map.getOrDefault(c,0)+1);
+//
+//            while (map.size()>k){
+//
+//                char leftchar = s.charAt(left);
+//                map.put(leftchar,map.get(leftchar)-1);
+//
+//                if (map.get(leftchar)==0){
+//                    map.remove(leftchar);
+//                }
+//                 left++;
+//
+//            }
+//             if (map.size()==k){
+//                 maxlength = Math.max(maxlength,right-left+1);
+//
+//             }
+//              right++;
+//        }
+//
+//        return maxlength;
+//
+//    }
+//
+//}
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "aabacbebebe";
+        int k = 3;
+        System.out.println(longest(s,k));
+
+    }
+
+    static int longest(String s, int k) {
+        int left = 0;
+        int right = 0;
+        int maxlength = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+
+            while (map.size() > k) {
+                char leftchar = s.charAt(left);
+                map.put(leftchar, map.get(leftchar) - 1);
+
+                if (map.get(leftchar) == 0) {
+                    map.remove(leftchar);
+                }
+                left++;
+
+
+            }
+            if (map.size() == k) {
+                maxlength = Math.max(maxlength, right - left + 1);
+
+            }
+             right++;
+        }
+        return maxlength;
+
+    }
+}
+//public class Main {
+//    public static void main(String[] args) {
+//        int n = 123;
+//        int reverse = 0;
+//        int original = n;
+//
+//        while (n > 0) {
+//            int rem = n % 10;
+//            reverse = reverse * 10 + rem;
+//            n = n / 10;
+//        }
+//
+//            if (reverse == original) {
+//                System.out.println("palindrome ");
+//            } else {
+//                System.out.println("not palindrome");
+//            }
+//        }
+//    }
