@@ -1,0 +1,208 @@
+import java.util.HashMap;
+
+//import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        String s = "ADOBECODEBANC";
+//        String t = "ABC";
+//        System.out.println(minWindow(s, t));  // Expected: "BANC"
+//    }
+//
+//    static String minWindow(String s, String t) {
+//        if (s.length() < t.length()) return "";
+//
+//        // store frequency of t in map
+//        HashMap<Character, Integer> map = new HashMap<>();
+//        for (int i = 0; i < t.length(); i++) {
+//            char c = t.charAt(i);
+//            map.put(c, map.getOrDefault(c, 0) + 1);
+//        }
+//
+//        int left = 0, right = 0;
+//        int count = map.size();   // total unique chars we need to match
+//        int minLen = Integer.MAX_VALUE;
+//        int start = 0;
+//
+//        while (right < s.length()) {
+//            char c = s.charAt(right);
+//
+//            if (map.containsKey(c)) {
+//                map.put(c, map.get(c) - 1);
+//                if (map.get(c) == 0) { // requirement for this char satisfied
+//                    count--;
+//                }
+//            }
+//
+//            // when all requirements matched
+//            while (count == 0) {
+//                // update answer
+//                if (right - left + 1 < minLen) {
+//                    minLen = right - left + 1;
+//                    start = left;
+//                }
+//
+//                char leftChar = s.charAt(left);
+//                if (map.containsKey(leftChar)) {
+//                    map.put(leftChar, map.get(leftChar) + 1);
+//                    if (map.get(leftChar) > 0) {
+//                        count++;
+//                    }
+//                }
+//                left++;
+//            }
+//
+//            right++;
+//        }
+//
+//        return (minLen == Integer.MAX_VALUE) ? "" : s.substring(start, start + minLen);
+//    }
+//}
+import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        String s = "ADOBECODEBANC";
+//        String t = "ABC";
+//        System.out.println(miniwindow(s, t));  // Output: "BANC"
+//    }
+//
+//    static String miniwindow(String s, String t) {
+//        // ✅ 1. Target characters map
+//        HashMap<Character, Integer> map = new HashMap<>();
+//        for (int i = 0; i < t.length(); i++) {
+//            char c = t.charAt(i);
+//            map.put(c, map.getOrDefault(c, 0) + 1);
+//        }
+//
+//        int left = 0, right = 0;
+//        int count = map.size();           // ✅ Track unique characters remaining
+//        int minLen = Integer.MAX_VALUE;
+//        int start = 0;
+//
+//        // 2️⃣ Sliding window
+//        while (right < s.length()) {
+//            char c = s.charAt(right);
+//
+//            if (map.containsKey(c)) {
+//                map.put(c, map.get(c) - 1);
+//                if (map.get(c) == 0) {  // requirement for this char fulfilled
+//                    count--;
+//                }
+//            }
+//
+//            // 3️⃣ Shrink window from left if valid
+//            while (count == 0) {
+//                if (right - left + 1 < minLen) {
+//                    minLen = right - left + 1;
+//                    start = left;
+//                }
+//
+//                char leftChar = s.charAt(left);
+//                if (map.containsKey(leftChar)) {
+//                    map.put(leftChar, map.get(leftChar) + 1);
+//                    if (map.get(leftChar) > 0) {
+//                        count++;
+//                    }
+//                }
+//                left++;
+//            }
+//
+//            right++;
+//        }
+//
+//        // 4️⃣ Return final result
+//        if (minLen == Integer.MAX_VALUE) {
+//            return "";
+//        } else {
+//            return s.substring(start, start + minLen);
+//
+//        }
+//    }
+//}
+
+public class Main {
+    public static void main(String[] args) {
+
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        System.out.println(miniwindow(s, t));
+
+    }
+
+    static String miniwindow(String s, String t) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < t.length(); i++) {
+            char c = t.charAt(i);
+            map.put(c, map.getOrDefault(c, 0) + 1);
+
+
+        }
+        int left = 0, right = 0;
+        int count = map.size();
+        int minilength = Integer.MAX_VALUE;
+        int start = 0;
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) - 1);
+                if (map.get(c) == 0) {
+                    count--;
+                }
+            }
+            while (count == 0) {
+                if (right - left + 1 < minilength) {
+                    minilength = right - left + 1;
+                    start = left;
+                }
+                char charleft = s.charAt(left);
+                if (map.containsKey(charleft)) {
+                    map.put(charleft, map.get(charleft) + 1);
+                    if (map.get(charleft) > 0) {
+                        count++;
+
+                    }
+                }
+                left++;
+            }
+            right++;
+        }
+        if (minilength == Integer.MAX_VALUE) {
+            return " ";
+        } else {
+            return s.substring(start, start + minilength);
+
+        }
+    }
+}
+//
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        int[] arr = {1, 2, 3, 4, 5, 6};
+//        int[] result = twosum(arr);
+//        System.out.println(result[0] + "  " + result[1]);
+//    }
+//
+//    static int[] twosum(int[] arr1) {
+//        int left = 0;
+//        int right = arr1.length - 1;
+//        int target = 7;
+//
+//        while (left < right) {
+//            int sum = arr1[left] + arr1[right];
+//            if (sum == target) {
+//                return new int[]{left, right};
+//            }
+//            if (sum < target) {
+//                left++;
+//
+//            }
+//            right--;
+//
+//
+//        }
+//        return new int[]{1, 1};
+//
+//    }
+//}
