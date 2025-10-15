@@ -1,0 +1,323 @@
+/*
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter the size of an array");
+        int n = input.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = input.nextInt();
+
+
+        }
+        if (isdivide(arr)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+
+
+    }
+
+    static boolean isdivide(int[] arr) {
+        int total_sim = 0;
+        for (int i = 0; i < arr.length; i++) {
+            total_sim = total_sim + arr[i];
+
+        }
+        int prefix = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            prefix = prefix + arr[i];
+            int suffix = total_sim - prefix;
+            if (prefix == suffix) {
+                return true;
+            }
+
+        }
+        return false;
+
+    }
+}
+*/
+/*
+1️⃣ Running Sum of 1D Array
+Given an array of numbers, compute a running (cumulative) sum so that each element at index i is the sum of all original elements from index 0 to i.
+This is the simplest prefix-sum problem: iterate through the array and set prefix[i] = prefix[i-1] + arr[i] (with prefix[0]=arr[0]).
+Example: For arr = [2,4,6,8], the running-sum output is [2, 6, 12, 20]. (geeksforgeeks.org) Time complexity → O(n) using only a few extra variables.*/
+
+
+//import java.util.Arrays;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        Scanner input = new Scanner(System.in);
+//         int n = input.nextInt();
+//         int[]arr = new int[n];
+//        for (int i = 1; i <n ; i++) {
+//            arr[i] = input.nextInt();
+//
+//        }
+//        int[]pref = prefsum(arr);
+//        System.out.println(Arrays.toString(pref));
+//    }
+//
+//    static  int[]prefsum(int[]arr){
+//
+//        for (int i = 1; i < arr.length ; i++) {
+//             arr[i] = arr[i] +arr[i-1];
+//        }
+//         return  arr;
+//    }
+//}
+//2️⃣ Range Sum Query (Immutable) [1D]
+//Given a fixed array and multiple queries [L, R], return the sum of elements from index L to R for each query.
+//The classic solution builds a prefix-sum array once (in O(n)), then answers each query in O(1) by computing: sum(L,R) = prefix[R] - (L>0 ? prefix[L-1] : 0)
+//This uses the fact that the prefix array holds cumulative sums (geeksforgeeks.org).
+//Example: arr=[2,4,6,8,10] and query [1,3] gives 4+6+8 = 18 via prefix[3]-prefix[0]. This technique avoids looping over [L,R] for each query (geeksforgeeks.org).
+
+/*
+import java.util.Scanner;
+
+public class Main {
+    static int[] intsum(int[] arr) {
+
+        int n = arr.length;
+        int[] pref = new int[n];
+        pref[0] = 0;
+        for (int i = 1; i < n; i++) {
+            pref[i] = pref[i - 1] + arr[i];
+
+
+        }
+        return pref;
+
+
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("enter the size of an array");
+        int n = input.nextInt();
+        int[] arr = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            arr[i] = input.nextInt();
+
+        }
+        int[] pref = intsum(arr);
+        System.out.println("enter the query");
+        int q = input.nextInt();
+        while (q-- > 0) {
+            System.out.println("enter the starting element  and an  end element  ");
+            int starting = input.nextInt();
+            int end = input.nextInt();
+            int ans = pref[end] - pref[starting - 1];
+            System.out.println(ans);
+        }
+
+
+    }
+}*/
+//Reconstruct Array from Prefix-Sum Array
+//Given an array of prefix sums presum[] (where presum[i] = arr[0]+…+arr[i]), recover the original array arr[].
+//The solution uses the inverse of prefix computation: arr[0] = presum[0], and for each i>0, do arr[i] = presum[i] - presum[i-1].
+//This comes directly from presum[i]=presum[i-1]+arr[i], so subtracting yields arr[i] (geeksforgeeks.org).
+//Example: presum=[5,7,10,11,18] yields arr=[5,2,3,1,7] (geeksforgeeks.org).
+
+//import java.util.Scanner;
+//
+//public class Main {
+//    static int[] prefix(int[] arr) {
+//        int n = arr.length;
+//        int[] prefix = new int[n];
+//        prefix[0] = arr[0];
+//        for (int i = 1; i < arr.length; i++) {
+//            prefix[i] = arr[i] - arr[i - 1];
+//
+//        }
+//        return prefix;
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[] arr = new int[n];
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = input.nextInt();
+//
+//        }
+//        int[] arrr = prefix(arr);
+//        for (int i = 0; i < arr.length; i++) {
+//            System.out.print(arrr[i] + "  ");
+//
+//        }
+//
+//    }
+//
+//
+//}
+//
+//
+//
+//
+//import java.util.Scanner;
+//
+//public class Main {
+//    static  int[]prefix(int[]arr){
+//        int n = arr.length;
+//        int[]prefix = new int[n];
+//        prefix[0] = arr[0];
+//        for (int i = 1; i < arr.length; i++) {
+//             prefix[i] = arr[i] - arr[i-1];
+//
+//        }
+//        return prefix;
+//
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[]arr = new int[n];
+//        for (int i = 0; i < arr.length ; i++) {
+//             arr[i] = input.nextInt();
+//
+//        }
+//         int[]recons = prefix(arr);
+//        for (int i = 0; i < recons.length ; i++) {
+//            System.out.println(recons[i]);
+//
+//        }
+//    }
+//}
+//
+// 4️⃣ Equilibrium Index (Pivot Index) in an Array
+//Find an index i such that the sum of elements to the left equals the sum of elements to the right.
+//A linear-time solution computes the total sum first, then walks through the array maintaining a running left-sum. At each index i, check whether leftSum == (totalSum - leftSum - arr[i]).
+//        In code, update leftSum += arr[i] after the check. This is effectively using prefix sums on the fly (geeksforgeeks.org).
+//Example: In [1,7,3,6,5,6], the pivot index is 3 (0-based) because 1+7+3 = 6+5+6 = 11.
+//import java.util.Scanner;
+//
+//public class Main {
+//
+//    // Function to find and print equilibrium indices
+//    static void findEquilibriumIndex(int[] arr) {
+//        int totalSum = 0;
+//        // Calculate total sum using old for loop
+//        for (int i = 0; i < arr.length; i++) {
+//            totalSum += arr[i];
+//        }
+//
+//        int leftSum = 0;
+//        boolean found = false;
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            int rightSum = totalSum - leftSum - arr[i]; // Right sum = total - left - current
+//            if (leftSum == rightSum) {
+//                System.out.println("Equilibrium index: " + i);
+//                found = true;
+//            }
+//            leftSum += arr[i]; // Update left sum for next index
+//        }
+//
+//        if (!found) {
+//            System.out.println("No equilibrium index found");
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//
+//        System.out.print("Enter number of elements: ");
+//        int n = input.nextInt();
+//
+//        int[] arr = new int[n];
+//        System.out.println("Enter the elements:");
+//        for (int i = 0; i < n; i++) {
+//            arr[i] = input.nextInt();
+//        }
+//
+//        findEquilibriumIndex(arr);
+//    }
+//}
+
+//import java.util.Scanner;
+//
+//public class Main {
+//    static void equilibirum(int[]arr){
+//         int totalsum = 0 ;
+//        for (int i = 0; i <arr.length ; i++) {
+//            totalsum = totalsum+arr[i];
+//
+//        }
+//         int leftsum = 0 ;
+//        boolean found= false;
+//        for (int i = 0; i <arr.length ; i++) {
+//            int rightsum = totalsum - leftsum-arr[i];
+//            if (leftsum==rightsum){
+//                System.out.println(i);
+//                found = true;
+//            }
+//             leftsum = leftsum+arr[i];
+//
+//        }
+//         if (!found){
+//             System.out.println("not found");
+//         }
+//
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner input = new Scanner(System.in);
+//        int n = input.nextInt();
+//        int[]arr = new int[n];
+//        for (int i = 0; i <n ; i++) {
+//           arr[i] = input.nextInt();
+//
+//        }
+//         equilibirum(arr);
+//    }
+//
+//}
+
+import java.util.Scanner;
+
+public class Main {
+    static void equib(int[] arr) {
+        int toatalsum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            toatalsum = toatalsum + arr[i];
+
+        }
+        int leftsum = 0;
+        boolean found = false;
+        for (int i = 0; i < arr.length; i++) {
+            int right = toatalsum - leftsum - arr[i];
+            if (leftsum == right) {
+                System.out.println(i);
+                found = true;
+            }
+            leftsum = leftsum + arr[i];
+
+
+        }
+        if (!found) {
+            System.out.println("not found");
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = input.nextInt();
+
+        }
+        equib(arr);
+    }
+}
