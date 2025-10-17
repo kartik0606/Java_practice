@@ -1,0 +1,257 @@
+import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {10, 2, -2, -20, 10};
+//        int k = -10;
+//        int result = countsub(arr, k);
+//        System.out.println(result);
+//
+//    }
+//
+//    static int countsub(int[] arr, int k) {
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        map.put(0, 1);
+//        int sum = 0;
+//        int count = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            sum = sum + arr[i];
+//            if (map.containsKey(sum - k)) {
+//                map.get(sum - k);
+//                count = count + map.get(sum - k);
+//            }
+//            map.put(sum, map.getOrDefault(sum, 0) + 1);
+//
+//
+//        }
+//        return count;
+//
+//
+//    }
+//}
+
+//
+//import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        int[] arr = {10, 2, -2, -20, 10};
+//        int k = -10;
+//        int result = countsub(arr, k);
+//        System.out.println(result);
+//
+//
+//    }
+//    static int countsub(int[]arr , int k ){
+//        HashMap<Integer,Integer>map = new HashMap<>();
+//        int n = arr.length;
+//        int[]pref = new int[n];
+//        pref[0] = arr[0];
+//        for (int i = 1; i < arr.length ; i++) {
+//             pref[i] = pref[i-1] + arr[i];
+//
+//        }
+//          map.put(0,1);
+//           int count = 0 ;
+//        for (int i = 0; i < arr.length ; i++) {
+//             int current  = pref[i];
+//
+//             if (map.containsKey(current-k)){
+//                  map.get(current-k);
+//                  count = count + map.get(current-k);
+//             }
+//          map.put(current, map.getOrDefault(current,0)+1);
+//
+//        }
+//         return  count;
+//    }
+//}
+
+//import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {10, 2, -2, -20, 10};
+//        int k = -20;
+//        int result = countsub(arr, k);
+//        System.out.println(result);
+//
+//    }
+//
+//    static int countsub(int[] arr, int k) {
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        map.put(0, 1);
+//        int count = 0;
+//        int sum = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            sum = sum + arr[i];
+//            if (map.containsKey(sum - k)) {
+//                map.get(sum - k);
+//                count = count + map.get(sum - k);
+//            }
+//            map.put(sum, map.getOrDefault(sum, 0) + 1);
+//        }
+//        return count;
+//
+//    }
+//}
+
+//6️⃣ Longest Subarray with Equal Number of 0s and 1s (Binary Array)
+//Given a binary array (elements are 0 or 1), find the maximum-length contiguous subarray with an equal count of 0s and 1s.
+//        Transform 0 → -1 and compute the running sum; now equal numbers of 0s and 1s correspond to a zero-sum subarray.
+//Use a map to remember the first index each running sum value was seen. When a sum repeats or becomes 0, you have a zero-sum subarray.
+//This prefix-sum technique is a standard solution (geeksforgeeks.org).
+//Example: arr=[1,0,1,1,1,0,0] has longest equal-0-1 subarray length = 6 ([0,1,1,1,0,0]). The map/lookups ensure O(n) time.
+
+//import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        int[] arr = {1, 0, 1, 1, 1, 0, 0};
+//        System.out.println(longest(arr));
+//
+//    }
+//
+//    static int longest(int[] arr) {
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        int sum = 0;
+//        int longest = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] == 0) {
+//                sum = sum + (-1);
+//
+//            } else {
+//                sum = sum + 1;
+//            }
+//            if (sum == 0) {
+//                longest = longest + i;
+//            }
+//            if (map.containsKey(sum)) {
+//                longest = Math.max(longest, i - map.get(sum));
+//
+//            } else {
+//                map.put(sum, i);
+//            }
+//
+//        }
+//        return longest;
+//    }
+//}
+
+//
+//3️⃣ Reconstruct Array from Prefix-Sum Array
+//Given an array of prefix sums presum[] (where presum[i] = arr[0]+…+arr[i]), recover the original array arr[].
+//The solution uses the inverse of prefix computation: arr[0] = presum[0], and for each i>0, do arr[i] = presum[i] - presum[i-1].
+//This comes directly from presum[i]=presum[i-1]+arr[i], so subtracting yields arr[i] (geeksforgeeks.org).
+//Example:
+//
+//import java.util.Scanner;
+//
+//public class Main {
+//      static  int[] recons(int[]arr){
+//          int n = arr.length;
+//          int[]pref = new int[n];
+//          pref[0] = arr[0];
+//          for (int i = 1; i < arr.length ; i++) {
+//               pref[i] = arr[i] - arr[i-1];
+//
+//          }
+//           return pref;
+//
+//      }
+//
+//     public static void main(String[] args) {
+//         Scanner input = new Scanner(System.in);
+//         int n = input.nextInt();
+//         int[]arr = new int[n];
+//         for (int i = 0; i < arr.length ; i++) {
+//              arr[i] = input.nextInt();
+//
+//         }
+//          int[]pref = recons(arr);
+//         for (int i = 0; i < arr.length ; i++) {
+//             System.out.print(pref[i] +  "  ");
+//
+//         }
+//
+//     }
+//}
+//
+//import java.util.HashMap;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] arr = {1, 0, 1, 0, 0, 1, 1};
+//        System.out.println(maxlength(arr));
+//
+//    }
+//
+//    static int maxlength(int[] arr) {
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        int sum = 0;
+//        int max = 0;
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] == 0) {
+//                sum = sum + (-1);
+//            } else {
+//                sum = sum + 1;
+//            }
+//            if (sum == 0) {
+//                max = i+1;
+//            }
+//            if (map.containsKey(sum)) {
+//                max = Math.max(max, i - map.get(sum));
+//
+//
+//            } else {
+//                map.put(sum, i);
+//
+//            }
+//
+//
+//        }
+//        return max;
+//    }
+//}
+
+//7️⃣ Product of Array Except Self
+//Given an array arr, build an output array res where res[i] equals the product of all arr[j] for j≠i, without using division.
+//The prefix-sum analogy here is to use prefix and suffix products. First compute a prefix-product array, then multiply by a suffix running product in a second pass (or vice versa).
+//Equivalently, compute all left-products into res[i], then multiply each by the product of elements to the right. This yields the result in O(n) time and O(1) extra space (geeksforgeeks.org).
+//Example: arr=[10,3,5,6,2] produces res=[180,600,360,300,900] (geeksforgeeks.org).
+
+import java.util.Arrays;
+
+public class Main {
+     public static void main(String[] args) {
+   int[]arr = {1, 2, 3,4, 5};
+   int[] result = product(arr);
+         for (int i = 0; i < result.length ; i++) {
+
+             System.out.println(result[i]);
+         }
+
+     }
+
+
+     static  int[]product(int[]arr){
+          int n  = arr.length;
+          int[] pref = new int[n];
+          pref[0] = 1;
+         for (int i = 1; i < arr.length ; i++) {
+              pref[i] = pref[i-1] * arr[i-1];
+
+         }
+          int suffix = 1;
+         for (int i = n-1; i >=0 ; i--) {
+              pref[i] = pref[i] * suffix;
+              suffix  = suffix * arr[i];
+
+             
+         }
+          return pref;
+     }
+}
