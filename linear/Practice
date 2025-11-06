@@ -1,0 +1,215 @@
+//public class Main {
+//    public static void main(String[] args) {
+//        String name = "kartik";
+//        char target = 't';
+//        System.out.println(search(name, target));
+//
+//
+//    }
+//
+//    static boolean search(String name, char target) {
+//        if (name.length() == 0) {
+//            return false;
+//
+//        }
+//        for (int i = 0; i < name.length(); i++) {
+//            if (target == name.charAt(i)) {
+//                return true;
+//
+//
+//            }
+//
+//
+//        }
+//        return false;
+//    }
+//}
+
+//import java.util.Arrays;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        String name = "kartik";
+
+import java.util.Arrays;
+
+////        char target = 'f';
+//        System.out.println(Arrays.toString(name.toCharArray()));
+//
+//
+//    }
+//
+//    static boolean search(String name, char target) {
+//        if (name.length() == 0) {
+//            return false;
+//
+//        }
+//            for ( char ch : name.toCharArray()){
+//                 if (ch==target){
+//                     return true;
+//
+//            }
+//
+//
+//        }
+//             return  false;
+//
+//    }
+//}
+
+// public class Main {
+//    public static void main(String[] args) {
+//         int[]arr =  {1,2,3,4,5};
+//         int target  = 4;
+//        System.out.println(search(arr,target,1,3));
+//
+//    }
+//     static  int search(int[]arr , int target , int start , int end ){
+//         if (arr.length==0){
+//              return -1;
+//         }
+//         for ( int i = start; i <=end ; i++) {
+//              if (arr[i] ==target){
+//                   return i;
+//              }
+//
+//         }
+//          return -1;
+//     }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//        int[][] arr = {
+//                {1, 2, 3},
+//                {54, 42, 5},
+//                {11, 23, 533, 3323},
+//                {55}
+//        };
+//        int target = 5235;
+//        int[] ans = search(arr, target);
+//        System.out.println(Arrays.toString(ans));
+//        System.out.println(max(arr));
+//
+//    }
+//
+//    static int[] search(int[][] arr, int target) {
+//        for (int row = 0; row < arr.length; row++) {
+//            for (int col = 0; col < arr[row].length; col++) {
+//                if (arr[row][col] == target) {
+//                    return new int[]{row, col};
+//                }
+//
+//            }
+//
+//        }
+//        return new int[]{-1, -1};
+//
+//    }
+//
+//    static int max(int[][] arr) {
+//        int max = Integer.MIN_VALUE;
+//        for (int row = 0; row < arr.length; row++) {
+//            for (int col = 0; col < arr[row].length; col++) {
+//                if (arr[row][col] > max) {
+//                    max = arr[row][col];
+//                }
+//
+//            }
+//
+//        }
+//        return max;
+//
+//    }
+//}
+
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] nums = {18, 124, 9, 1764, 98, 1};
+//        System.out.println(find(nums));  // Output should be 3
+//    }
+//
+//    static int find(int[] nums) {
+//        int count = 0;
+//        for (int num : nums) {
+//            if (even(num)) {   // ✅ FIXED: pass the number, not the array
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+//
+//    static boolean even(int num) {
+//        int noOfDigits = digits(num);
+//        return noOfDigits % 2 == 0;   // ✅ FIXED: return boolean
+//    }
+//
+//    static int digits(int num) {
+//        int count = 0;
+//        while (num > 0) {
+//            count++;
+//            num /= 10;
+//        }
+//        return count;  // ✅ FIXED: must return count
+//    }
+//}
+
+// public class Main {
+//    public static void main(String[] args) {
+//         int[]nums = {18, 124, 9, 1764, 98, 1};
+//        System.out.println(find(nums));
+//
+//    }
+//
+//    static int find(int[]nums){
+//        int count = 0 ;
+//
+//        for (int i = 0; i <nums.length ; i++) {
+//             if (even(nums[i])){
+//                 count++;
+//             }
+//
+//        }
+//         return count;
+//
+//    }
+//
+//         static boolean even(int num) {
+//         int noofdifits = digits(num);
+//         return noofdifits%2==0;
+//
+//
+//    }
+//      static int digits(int num){
+//         int count = 0 ;
+//         while (num>0){
+//               num = num/10;
+//               count++;
+//         }
+//         return  count;
+//
+//      }
+//}
+//public class Main {
+//    public static void main(String[] args) {
+//         int[]nums = {18, 124, 9, 1764, 98, 1};
+//        System.out.println(find(nums));
+//
+//    }
+//
+//    static int find(int[] nums) {
+//        int count = 0;
+//        for (int i = 0; i < nums.length; i++) {
+//            if (even(nums[i])) {
+//                count++;
+//
+//            }
+//        }
+//        return count;
+//    }
+//
+//    static boolean even(int num) {
+//
+//        int digits = String.valueOf(num).length();
+//        return digits % 2 == 0;
+//    }
+//}
