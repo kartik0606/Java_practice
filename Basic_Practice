@@ -1,0 +1,34 @@
+//6. Find Third Largest Element in Array
+//* Problem: Given an array of distinct integers, find the third-largest elementgeeksforgeeks.org. For example, in [1,14,2,16,10,20], the largest is 20, second is 16, so the third largest is 14.
+//        * Why it’s important: This is a further extension of finding the nth-largest element. It tests the candidate’s ability to generalize the approach (e.g. maintaining three top values) or using sorting. It checks attention to detail and handling small n-value ordering.
+
+
+ public class Main {
+     public static void main(String[] args) {
+          int[]arr = {1,2,3,4,5};
+         System.out.println(third(arr));
+
+     }
+
+     static  int third(int[]arr){
+          int max = Integer.MIN_VALUE;
+          int third = Integer.MIN_VALUE;
+          int second  = Integer.MIN_VALUE;
+         for (int i = 0; i <arr.length ; i++) {
+              if (arr[i]>max){
+                   third = second;
+                   second  = max;
+                   max = arr[i];
+              }
+              else if (arr[i]>second){
+                  third = second;
+                  second = arr[i];
+               } else if (arr[i] > third) {
+                    third = arr[i];
+                   
+               }
+
+         }
+          return third;
+     }
+}
