@@ -1,0 +1,50 @@
+public class human {
+    public static void main(String[] args) {
+
+        human1 kc = new human1(84, "kc", true, 7);
+        System.out.println(kc.roll);
+
+        System.out.println(human1.population);
+
+         fun();
+         human obj = new human();
+         obj.fun2();
+
+
+    }
+
+    static void fun() {
+        greeting();
+
+
+    }
+
+    void fun2() {
+        greeting();
+
+    }
+
+       static   void greeting() {
+        System.out.println("hey");
+    }
+
+
+    static class human1 {
+        int roll;
+        String name;
+        boolean salary;
+        static long population;
+
+        human1(int roll, String name, boolean salary, long population) {
+            this.roll = roll;
+            this.salary = true;
+            this.name = "kc";
+            human1.population = 7;
+
+        }
+
+
+    }
+
+}
+
